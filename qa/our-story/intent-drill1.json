@@ -1,0 +1,38 @@
+{
+  "task_type": "content_update",
+  "summary": "Part D safety drill on Our Story (post 49): sections wiped and title overwritten, then both restored with dev/rollback-db; post protected, three writes refused, then unprotected. Net intended change: NONE — the page must end identical to its pre-drill state.",
+  "declared_targets": [
+    {
+      "kind": "post",
+      "id": 49,
+      "slug": "our-story"
+    }
+  ],
+  "declared_changes": [
+    {
+      "target": "post:49",
+      "field": "post_title",
+      "before": "Our Story",
+      "after": "Our Story"
+    },
+    {
+      "target": "post:49",
+      "field": "acf:sections (flexible content, 2 rows: hero 'Our Story', image_text 'Curators of Flavor')",
+      "before": "baseline/acf-49.json",
+      "after": "baseline/acf-49.json"
+    },
+    {
+      "target": "post:49",
+      "field": "dev-connect protected_posts membership",
+      "before": false,
+      "after": false
+    }
+  ],
+  "reference": {
+    "kind": "none",
+    "note": "Baseline = pre-drill capture in baseline/ (acf-49.json raw sections, screenshots/before-1440.png full page at 1440px)."
+  },
+  "blast_radius": [
+    "home"
+  ]
+}

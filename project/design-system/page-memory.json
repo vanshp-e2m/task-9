@@ -1,0 +1,6 @@
+{
+  "pages": {
+    "home":      { "page_id": 25, "status": "publish", "layouts": ["hero", "image_text"], "built": "2026-09-23", "notes": "3 of 9 Figma homepage sections built (header, hero, Worthy of the Fame)" },
+    "our-story": { "page_id": 49, "status": "publish", "layouts": ["hero", "image_text"], "built": "2026-09-23", "notes": "Built to prove global settings apply across pages (Part C)" }
+  }
+}

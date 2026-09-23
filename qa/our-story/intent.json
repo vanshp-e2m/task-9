@@ -1,0 +1,26 @@
+{
+  "task_type": "content_update",
+  "summary": "Loom re-run of the safety drill on Our Story (post 49), 2026-09-23 14:12-14:15 UTC: field_vy_sections wiped to [] via dev/acf-read-write-values, then restored via dev/rollback-db backup 1790172752-c8iTpWuW (undo_id 1790172945-v9cv4eGx). Title and protection untouched this run. Net intended change: NONE - page must be identical to its pre-drill state.",
+  "declared_targets": [
+    {
+      "kind": "post",
+      "id": 49,
+      "slug": "our-story"
+    }
+  ],
+  "declared_changes": [
+    {
+      "target": "post:49",
+      "field": "acf:sections (flexible content, 2 rows: hero 'Our Story', image_text 'Curators of Flavor')",
+      "before": "baseline/acf-49.json",
+      "after": "baseline/acf-49.json"
+    }
+  ],
+  "reference": {
+    "kind": "none",
+    "note": "Baseline = pre-drill capture in baseline/ (acf-49.json raw sections, screenshots/before-1440.png full page at 1440px)."
+  },
+  "blast_radius": [
+    "home"
+  ]
+}

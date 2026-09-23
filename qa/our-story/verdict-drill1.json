@@ -1,0 +1,112 @@
+{
+  "verdict": "PASS",
+  "reason": "all measured properties within tolerance; no undeclared changes",
+  "findings": [],
+  "counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "notes": [
+    "viewports: qa_breakpoints.core [1440,768,390] from project-config.json + 900/901 from theme's single @media (max-width:900px); resolve_qa_widths discovery unavailable (python playwright missing)",
+    "typography mode: inherit (site owns type); 0 typography differences observed, 0 suppressed",
+    "baseline partial: raw ACF + 1440 screenshot only; measured phase substituted with data-level read-back equality + DOM probe; see gate_coverage",
+    "pixel 196 px at 1440 (<500): stripe-gradient anti-aliasing + photo resampling noise; caller's 0 px claim not reproduced",
+    "audit log shows 4 refused calls during protection (update-page 340, acf write 343, delete-page 346, acf read 350) - caller described three writes; #350 shares input_hash with earlier successful reads, i.e. a read refused because acf-read-write-values is write-gated"
+  ],
+  "pass_number": 1,
+  "cap": 3,
+  "cap_reached": false,
+  "unverifiable": [],
+  "agent": "maint-qa",
+  "target": "post:49",
+  "slug": "our-story",
+  "task_type": "content_update",
+  "generated_at": "2026-09-23T11:26:00Z",
+  "bundle": "C:/Users/Vansh Patel/Local Sites/task-9/app/public/pages/our-story/maint/bundle-pass1.json",
+  "gate_coverage": [
+    {
+      "component": "Phase 0 environment",
+      "phase": "0",
+      "status": "ran",
+      "state": "pass",
+      "note": "instructions, safety status, dry_run, reachability"
+    },
+    {
+      "component": "validate_intent.py",
+      "phase": "1",
+      "status": "ran",
+      "state": "pass",
+      "note": "valid, 0 errors/warnings; content_update not unverifiable"
+    },
+    {
+      "component": "baseline",
+      "phase": "2",
+      "status": "partial",
+      "state": "warn",
+      "note": "acf-49.json + before-1440.png present; no measurements-<w>.json, no media.json, no home baseline"
+    },
+    {
+      "component": "verify_stored_integrity.py",
+      "phase": "2b",
+      "status": "not applicable",
+      "state": "pass",
+      "note": "no post_content/markup write in the drill (post_content is ''); the stored ACF blob was compared directly by canonical JSON equality instead"
+    },
+    {
+      "component": "capture_rendered_page.js + compare_rendered_measurements.py/measured_assert.py",
+      "phase": "3",
+      "status": "capture ran; comparator not run",
+      "state": "warn",
+      "note": "capture succeeded for both pages at 5 widths; no baseline measurement file to compare against. Substituted: raw ACF/post read-back equality + DOM/computed-style probe + 1440 pixel parity"
+    },
+    {
+      "component": "resolve_qa_widths.py",
+      "phase": "3",
+      "status": "ran degraded",
+      "state": "warn",
+      "note": "python playwright missing -> no discovery; 900/901 boundary added manually from theme style.css (only @media rule)"
+    },
+    {
+      "component": "peer_conformance.py",
+      "phase": "3b",
+      "status": "not applicable",
+      "state": "pass",
+      "note": "reference.kind none and not a new-page task"
+    },
+    {
+      "component": "pixel diff",
+      "phase": "4",
+      "status": "ran (substituted engine)",
+      "state": "pass",
+      "note": "196 px < fail_at 500; visual_compare.py npx ENOENT on Windows, pixelmatch library used directly"
+    },
+    {
+      "component": "non-visual technical checks + read-backs",
+      "phase": "5",
+      "status": "ran",
+      "state": "pass",
+      "note": "console/network/HTTP/fatal clean on both pages"
+    },
+    {
+      "component": "attribute_changes.py",
+      "phase": "6",
+      "status": "ran",
+      "state": "pass",
+      "note": "0 observed differences, 0 scope violations; audit log populated"
+    }
+  ],
+  "escaped_defects": [],
+  "report_offer": {
+    "available": true,
+    "slug": "our-story",
+    "cmd": "python3 scripts/build_qa_report.py --slug our-story --pass 1",
+    "reference_kind": "none",
+    "evidence": {
+      "screenshots": 5,
+      "pixel": true,
+      "measured": true,
+      "peer": false
+    }
+  }
+}

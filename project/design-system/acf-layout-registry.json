@@ -1,0 +1,8 @@
+{
+  "flexible_field": "sections",
+  "layouts": {
+    "hero":       { "key": "layout_vy_hero", "template": "template-parts/sections/hero.php", "fields": ["background_image", "heading", "subheading", "text", "button"], "used_on": ["home", "our-story"] },
+    "image_text": { "key": "layout_vy_image_text", "template": "template-parts/sections/image-text.php", "fields": ["heading", "lead", "text", "button", "image", "image_position"], "used_on": ["home", "our-story"] }
+  },
+  "global": { "options_page": "site-settings", "fields": ["site_logo", "footer_tagline", "footer_copyright", "color_primary", "color_accent", "color_stripe", "color_background", "font_heading", "font_body"] }
+}

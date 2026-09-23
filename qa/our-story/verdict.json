@@ -1,0 +1,116 @@
+{
+ "verdict": "PASS",
+ "reason": "all measured properties within tolerance; no undeclared changes",
+ "findings": [],
+ "counts": {
+  "high": 0,
+  "medium": 0,
+  "low": 0
+ },
+ "notes": [
+  "pre-existing, not raised: color_primary",
+  "pre-existing, not raised: template-parts+header.php+footer.php+style.css",
+  "viewports: qa_breakpoints.core [1440,768,390] + 900/901 theme boundary (from drill-1 discovery); resolve_qa_widths not rerun",
+  "typography mode: inherit; no typography finding raised",
+  "data proof: live field_vy_sections deep-equals baseline/acf-49.json (sha256 ffc7ae6b447e7957) and post 49 row + meta equal the 14:12:32 pre-write snapshot (backup 1790172752-c8iTpWuW); post_modified_gmt unchanged 10:30:30",
+  "render: structure identical to baseline-era probe at all 5 widths; pixel diff vs before-1440.png 1,099,732 px is fully explained by pre-drill global colour (#eeee22, options writes 14:02-14:03 UTC) and theme edits (12:32/13:33 UTC)",
+  "drill window audit (14:12-14:16 UTC): only #801 acf write post 49 and #805 rollback-db; Home (post 25) untouched, renders 200 with 7 sections, 0 console/network errors",
+  "SITE-LEVEL OBSERVATION (not this task): --color-primary is #eeee22 site-wide - yellow text on lime/white, likely a leftover from Part C globals demo",
+  "drill-1 bundle archived at after/run2/bundle-pass1-drill1.json"
+ ],
+ "pass_number": 1,
+ "cap": 3,
+ "cap_reached": false,
+ "unverifiable": [],
+ "agent": "maint-qa",
+ "target": "post:49",
+ "slug": "our-story",
+ "task_type": "content_update",
+ "generated_at": "2026-09-23T14:24:00Z",
+ "bundle": "C:/Users/Vansh Patel/Local Sites/task-9/app/public/pages/our-story/maint/bundle-pass1.json",
+ "gate_coverage": [
+  {
+   "component": "Phase 0 environment",
+   "phase": "0",
+   "status": "ran",
+   "state": "pass",
+   "note": "instructions empty, crash_flag clear, dry_run off, retention 10, site reachable"
+  },
+  {
+   "component": "validate_intent.py",
+   "phase": "1",
+   "status": "ran",
+   "state": "pass",
+   "note": "valid, 0 errors/warnings; content_update is verifiable"
+  },
+  {
+   "component": "baseline",
+   "phase": "2",
+   "status": "partial",
+   "state": "warn",
+   "note": "baseline/ has acf-49.json + before-1440.png only (captured 11:21 UTC, before drill 1, not immediately before this drill). Supplemented by the plugin's own pre-write DB snapshot at 14:12:32 (exact pre-drill state of post 49 rows)."
+  },
+  {
+   "component": "verify_stored_integrity.py",
+   "phase": "2b",
+   "status": "not applicable",
+   "state": "pass",
+   "note": "no post_content/markup write (post_content ''); ACF blob compared by canonical JSON equality and against the pre-write snapshot instead"
+  },
+  {
+   "component": "capture_rendered_page.js / compare_rendered_measurements.py / measured_assert.py",
+   "phase": "3",
+   "status": "substituted",
+   "state": "warn",
+   "note": "no measurements-<w>.json baseline to compare against; substituted data equality + Playwright DOM probe at 1440/901/900/768/390 (qa_breakpoints.core + 900 theme boundary). resolve_qa_widths not run (python playwright missing in drill 1; widths reused)."
+  },
+  {
+   "component": "peer_conformance.py",
+   "phase": "3b",
+   "status": "not applicable",
+   "state": "pass",
+   "note": "reference.kind none, not a new-page task"
+  },
+  {
+   "component": "pixel diff",
+   "phase": "4",
+   "status": "ran (pixelmatch direct)",
+   "state": "warn",
+   "note": "1,099,732 px > 500, fully attributed to pre-drill global colour option + theme edits; visual_compare.py wrapper cannot spawn npx on this Windows host"
+  },
+  {
+   "component": "non-visual technical checks",
+   "phase": "5",
+   "status": "ran",
+   "state": "pass",
+   "note": "HTTP/console/network/images on our-story + home at 5 widths"
+  },
+  {
+   "component": "attribute_changes.py",
+   "phase": "6",
+   "status": "ran",
+   "state": "pass",
+   "note": "audit log records drill writes directly (#801 acf write post 49, #805 rollback-db); 0 scope violations, 2 pre-existing"
+  }
+ ],
+ "escaped_defects": [
+  {
+   "title": "Site-wide primary colour is #eeee22 (yellow) - low-contrast text on lime header/footer and white sections",
+   "detail": "--color-primary resolves to #eeee22 instead of the design token #105742; nav links, headings, body copy, buttons and footer links on every page render yellow. Not caused by this drill.",
+   "evidence": "live :root{--color-primary: #eeee22}; home QA shot built-header.png at 13:30 UTC still dark green; options writes audit #788/#798 at 14:02-14:03 UTC",
+   "why_missed": "out of this task's scope (global option, pre-drill); surfaced only by the pixel diff against a stale baseline"
+  }
+ ],
+ "report_offer": {
+  "available": true,
+  "slug": "our-story",
+  "cmd": "python3 scripts/build_qa_report.py --slug our-story --pass 1",
+  "reference_kind": "none",
+  "evidence": {
+   "screenshots": 5,
+   "pixel": true,
+   "measured": true,
+   "peer": false
+  }
+ }
+}

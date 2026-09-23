@@ -1,0 +1,34 @@
+{
+  "site_mode": "existing",
+  "builder": "acf",
+  "acf_present": true,
+  "acf_role": "page-structure",
+  "theme": { "name": "Vineyard", "stylesheet": "vineyard", "is_block_theme": false, "theme_mode": "classic", "styling": "css" },
+  "input_mode": "figma_url",
+  "figma_source": "url",
+  "figma": {
+    "file_key": "VbBJnEZw1401gbKabfiFX4",
+    "file_url": "https://www.figma.com/design/VbBJnEZw1401gbKabfiFX4/Vineyard-Design--Copy-",
+    "page_frame": "1:6972",
+    "canvas_width": 1440,
+    "note": "Figma MCP connector is on a Starter plan and hit its call limit; 6 of 9 homepage sections not yet extracted."
+  },
+  "acf": {
+    "page_sections_group": "group_6ab3a5cd822f3",
+    "flexible_field": "sections",
+    "layouts": ["hero", "image_text"],
+    "options_page": { "slug": "site-settings", "post_id": "site-settings", "group": "group_6ab3aa0062fef" }
+  },
+  "menus": { "primary": 2, "footer": 3 },
+  "design_tokens": {
+    "colors": { "primary": "#105742", "accent": "#a4d866", "stripe": "#56b099", "background": "#ffffff" },
+    "fonts": { "heading": "Fraunces (design: Novaletra Serif CF)", "body": "Nunito (design: Armin Soft)" },
+    "container": 1280
+  },
+  "pages": ["home", "our-story"],
+  "qa_breakpoints": { "core": [1440, 768, 390], "full": [1920, 1440, 1024, 768, 390] },
+  "project": {
+    "purpose": "DevConnect training exercise (Parts A–D) on a local practice site — never a client site.",
+    "additional_requirements": "All WordPress changes go through DevConnect abilities. Notes for the submission live in task-9/notes/."
+  }
+}

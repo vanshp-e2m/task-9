@@ -1,0 +1,17 @@
+{
+  "task_type": "content_update",
+  "summary": "Homepage completed to match the Figma 'Vineyard Design (Copy)' Homepage frame (1:6972): 5 new ACF Flexible Content layouts (product_cards, cards_grid, image_list, features, newsletter) added and filled; hero background restored to the grapes image; footer rebuilt from Figma (Site Settings copyright + social URLs, 8-link footer menu, new legal menu, stripes); 'From the Vine' submenu added; theme CSS/templates updated.",
+  "declared_targets": [
+    { "kind": "post", "id": 25, "slug": "home" },
+    { "kind": "option", "id": "site-settings" }
+  ],
+  "declared_changes": [
+    { "target": "post:25", "field": "acf:sections row count / layouts", "before": "2 rows: hero, image_text", "after": "7 rows: hero, image_text, product_cards, cards_grid, image_list, features, newsletter (see baseline/intended-sections.json)" },
+    { "target": "post:25", "field": "acf:sections row-0 hero background_image", "before": 24, "after": 23 },
+    { "target": "option:site-settings", "field": "footer_copyright", "before": "© {year} Famous Vineyards. All rights reserved.", "after": "Copyright © {year} Sun Pacific. All rights reserved." },
+    { "target": "option:site-settings", "field": "footer_tagline", "before": "Curators of flavor for over 50 years.", "after": "" },
+    { "target": "option:site-settings", "field": "social_facebook/instagram/x/linkedin/youtube", "before": "unset", "after": "network home URLs" }
+  ],
+  "reference": { "kind": "figma", "path": "pages/home/maint/reference/figma-homepage-1440.png", "note": "Figma REST render of node 1:6972 at 1440px, plus per-section renders in reference/. Design fonts Novaletra Serif CF / Armin Soft are substituted by Fraunces / Nunito (not web fonts) — line-wrap differences from that are expected." },
+  "blast_radius": ["our-story"]
+}
