@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Famous Vineyards — Home (from Figma)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,700&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #105742;      /* Famous Green */
+    --color-accent: #a4d866;       /* light-green/500 */
+    --color-stripe: #56b099;       /* stripes-green/500 */
+    --color-white: #ffffff;
+    --font-heading: "Fraunces", Georgia, serif;         /* design: Novaletra Serif CF */
+    --font-body: "Nunito", "Segoe UI", sans-serif;      /* design: Armin Soft */
+    --container: 1280px;
+    --pad-x: 64px;
+    --pad-section: 112px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-weight: 600; color: var(--color-primary); }
+  img { max-width: 100%; display: block; }
+  .container { max-width: var(--container); margin: 0 auto; }
+
+  /* Stripes: Figma exported 254 individual divs; one gradient replaces them */
+  .stripes { background: repeating-linear-gradient(90deg, var(--color-accent) 0 5.65px, var(--color-stripe) 5.65px 11.3px); }
+
+  .btn { display: inline-block; background: var(--color-white); color: var(--color-primary);
+    border: solid var(--color-primary); border-width: 3px 3px 6px 6px; border-radius: 8px;
+    padding: 12px 24px; font: 600 16px/1.5 var(--font-body); text-decoration: none; }
+
+  /* Header */
+  .site-header { position: relative; z-index: 10; }
+  .site-header__stripes { height: 23px; }
+  .site-header__bar { background: var(--color-accent); height: 67px; padding: 0 var(--pad-x); }
+  .site-header__inner { height: 100%; display: flex; align-items: center; justify-content: flex-end; position: relative; }
+  .site-header__logo { position: absolute; left: 15px; top: -13px; width: 316px; }
+  .site-nav ul { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
+  .site-nav a { color: var(--color-primary); text-decoration: none; font-size: 16px; line-height: 1.5; display: flex; align-items: center; gap: 4px; }
+
+  /* Hero */
+  .hero { position: relative; min-height: 790px; display: flex; align-items: center; justify-content: center;
+    background-size: 149.41% auto; background-position: 83% 77%;  /* same crop as Figma (img 149%/181%, offset -41%/-62%) */ text-align: center; color: var(--color-white); padding: 0 var(--pad-x); }
+  .hero::before { content: ""; position: absolute; left: 50%; top: 50%; width: 900px; height: 520px; transform: translate(-50%, -52%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 70%); }  /* design: blurred "Ellipse 2" */
+  .hero__content { position: relative; max-width: 768px; text-shadow: 0 6px 5px rgba(0,0,0,.33), 0 2px 1.5px rgba(0,0,0,.33); }
+  .hero__title { font: 900 56px/1.2 var(--font-heading); margin: 0; }
+  .hero__subtitle { font: italic 700 24px/1.2 var(--font-heading); margin: 12px 0 16px; }
+  .hero__text { font-size: 18px; line-height: 1.5; margin: 0 0 32px; }
+  .hero .btn { text-shadow: none; }
+
+  /* Image + text ("Worthy of the Fame") */
+  .image-text { position: relative; padding: var(--pad-section) var(--pad-x); overflow: hidden; }
+  .image-text::before { content: ""; position: absolute; inset: 0; opacity: .15;
+    background: repeating-linear-gradient(90deg, var(--color-accent) 0 5.65px, var(--color-stripe) 5.65px 11.3px); }
+  .image-text__inner { position: relative; display: flex; align-items: center; gap: 64px; }
+  .image-text__content { flex: 1; }
+  .image-text__title { font: 900 48px/1.2 var(--font-heading); margin: 0 0 24px; max-width: 515px; }
+  .image-text__text { font-size: 18px; line-height: 1.5; margin: 0 0 32px; }
+  .image-text__lead { font-family: var(--font-heading); font-style: italic; font-weight: 700; }
+  .image-text__media { flex: 0 0 638px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
+  .image-text__media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+
+  @media (max-width: 900px) {
+    .site-header__logo { width: 180px; }
+    .site-nav { display: none; }
+    .hero__title { font-size: 40px; }
+    .image-text__inner { flex-direction: column; }
+    .image-text__media { flex-basis: auto; width: 100%; max-width: 420px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__stripes stripes"></div>
+  <div class="site-header__bar">
+    <div class="site-header__inner container">
+      <a class="site-header__logo" href="/"><img src="https://www.figma.com/api/mcp/asset/8db31086-3385-4a68-b947-86c57fd32ba1.svg" alt="Famous Vineyards"></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#">Our Grapes</a></li>
+          <li><a href="#">About Famous Vineyards</a></li>
+          <li><a href="#">Where to Buy</a></li>
+          <li><a href="#">From the Vine <img src="https://www.figma.com/api/mcp/asset/5569aeeb-3df5-4e2c-9db9-3e2b657e9f51.svg" width="24" height="24" alt=""></a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="background-image:url('https://www.figma.com/api/mcp/asset/c1338d7a-f689-44fe-8ea2-39bba5ca58b8.png')">
+    <div class="hero__content">
+      <h1 class="hero__title">Famously Delicious.</h1>
+      <p class="hero__subtitle">Every Grape Has a Story Worth Tasting</p>
+      <p class="hero__text">Famous Vineyards brings you a curated collection of the most exceptional grapes. Each variety is selected for its distinct flavor, texture, and character. Discover what makes every bite unforgettable.</p>
+      <a class="btn" href="#">Find a Store</a>
+    </div>
+  </section>
+
+  <section class="image-text">
+    <div class="image-text__inner container">
+      <div class="image-text__content">
+        <h2 class="image-text__title">Worthy of the Fame in Our Name</h2>
+        <p class="image-text__text"><span class="image-text__lead">Famous Vineyards is where curiosity meets expertise.</span> We trial, we taste, and we only bring to market the grapes that earn their place at your table. For over 50 years, we've devoted ourselves to one pursuit: finding and growing the varieties that truly stand apart. That's what it means to be curators of flavor.</p>
+        <a class="btn" href="#">Meet Famous Vineyards</a>
+      </div>
+      <div class="image-text__media">
+        <img src="https://www.figma.com/api/mcp/asset/10063269-ed50-47e0-94fb-060c12aa0542.png" alt="Couple sharing grapes in a vineyard">
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

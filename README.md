@@ -26,7 +26,7 @@ Covered: the pipeline running, an editor changing content in wp-admin, a global 
 | Path | What it is |
 |---|---|
 | `notes/devconnect-exercise.md` | The submission notes, Parts A to D. |
-| `notes/part-b/vineyard-home.html` | The HTML generated from the Figma design, reviewed before the ACF conversion. |
+| `notes/part-b/vineyard-home.html` | The full 7-section homepage as standalone HTML (open it by double-clicking; images and CSS are in `notes/part-b/assets/`). `vineyard-home-v1-hero-only.html` is the first 2-section conversion that was reviewed before the ACF build. |
 | `notes/part-c/` | Before and after screenshots of one global colour changing Home and Our Story. |
 | `notes/part-d/` | Safety drill evidence: before, broken, restored and pixel-diff screenshots, section JSON before and after, and the audit log extract. |
 | `theme/vineyard/` | The theme: templates for the 7 Flexible Content layouts, Site Settings (header, footer, colours, typography), responsive CSS and icons. |
