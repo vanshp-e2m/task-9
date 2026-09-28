@@ -64,6 +64,11 @@ Process
 
 Figma → HTML → ACF → WordPress
 
+Figma → HTML file: notes/part-b/vineyard-home.html (full homepage, all 7 sections).
+Built only from the Figma design tree and Figma image exports, not from WordPress.
+Page is 6225px tall like the Figma frame; sections within 2px; every heading and
+paragraph breaks on the same lines as Figma.
+
 Used DevConnect for:
 
 Theme files
